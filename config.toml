@@ -1,5 +1,5 @@
 # Site settings
-baseURL = "https://ersanzi-project-web.netlify.com/"
+baseURL = "/"
 languageCode = "zh-cn"
 title = "Projects"
 theme = "forty"
