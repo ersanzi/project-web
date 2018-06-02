@@ -1,0 +1,51 @@
+
+<!-- saved from url=(0079)file:///E:/Github/Hugo/Sites/project/themes/forty/layouts/partials/contact.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body>{{ "<!-- Contact -->" | safeHTML}}
+    <section id="contact">
+        <div class="inner">
+            <section>
+                <form method="post" action="https://formspree.io/%7B%7B%20.Site.Params.Contact.formEmail%20%7D%7D">
+                    <div class="field half first">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div class="field half">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email">
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="6"></textarea>
+                    </div>
+                    <ul class="actions">
+                        <li><input type="submit" value="{{ .Site.Params.Contact.buttonSend }}" class="special"></li>
+                        <li><input type="reset" value="{{ .Site.Params.Contact.buttonClear }}"></li>
+                    </ul>
+                </form>
+            </section>
+            <section class="split">
+                <section>
+                    <div class="contact-method">
+                        <span class="icon alt fa-envelope"></span>
+                        {{ range .Site.Params.Contact.email }}
+                        <h3>{{ .title }}</h3>
+                        <a href="mailto:%7B%7B%20.email%20%7D%7D">{{ .email }}</a>
+                        {{ end }}
+                    </div>
+                </section>
+                
+                <section>
+                    <div class="contact-method">
+                        <span class="icon alt fa-home"></span>
+                        {{ range .Site.Params.Contact.address }}
+                        <h3>{{ .title }}</h3>
+                        <span>{{ .street }}<br>
+                        {{ .city }}<br>
+                        {{ .country }}</span>
+                        {{ end }}
+                    </div>
+                </section>
+            </section>
+        </div>
+    </section>
+</body></html>
